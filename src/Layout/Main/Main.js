@@ -21,6 +21,7 @@ const Main = () => {
     <div>
       <Layout>
         <Sider
+          style={{ background: "#ffffff" }}
           breakpoint="lg"
           collapsedWidth="0"
           onBreakpoint={(broken) => {
@@ -40,10 +41,12 @@ const Main = () => {
             mode="inline"
             onClick={onSelect}
             defaultSelectedKeys={["4"]}
-            className="h-screen "
             items={[
-              { label: "Home", key: "" },
-              { label: "Login", key: "Login" },
+              { label: "All Categories", key: "allCategories" },
+              { label: "Eggs", key: "eggs" },
+              { label: "Fresh Fruits", key: "freshFruits" },
+              { label: "Fish", key: "fish" },
+              { label: "Cooking Items", key: "cookingItems" },
             ]}
           />
         </Sider>
@@ -51,7 +54,9 @@ const Main = () => {
           <Header
             style={{
               padding: 0,
+              backgroundColor: "#8394a5",
             }}
+            className="bg-slate-500"
           >
             <Navbar></Navbar>
           </Header>
@@ -64,9 +69,10 @@ const Main = () => {
               <Outlet></Outlet>
             </div>
           </Content>
+
+          <Footer></Footer>
         </Layout>
       </Layout>
-      <Footer></Footer>
     </div>
   );
 };
